@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Html & Css</title>
+    <link rel="shortcut icon" href="assets/images/IMG_1814.PNG" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8;
+        color: #333;
+      }
+
+      .slide-container {
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #4a6fa5, #263b5e);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        color: #263b5e;
+        border-bottom: 2px solid #4a6fa5;
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        color: #4a6fa5;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+
+      .code-container {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .code-box {
+        flex: 1;
+        min-width: 300px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 14px;
+        border-left: 4px solid #4a6fa5;
+        margin-bottom: 15px;
+        overflow-x: auto;
+      }
+
+      .example-container {
+        margin-top: 30px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .example-header {
+        background-color: #f1f3f5;
+        padding: 8px 15px;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .example-content {
+        padding: 15px;
+      }
+
+      .example-live {
+        padding: 15px;
+        background-color: white;
+        border-radius: 4px;
+      }
+
+      .tabs {
+        display: flex;
+        background-color: #f1f3f5;
+        border-bottom: 1px solid #ddd;
+        flex-wrap: wrap;
+      }
+
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+      }
+
+      .tab.active {
+        border-bottom: 3px solid #4a6fa5;
+        font-weight: bold;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 20px;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .key-point {
+        background-color: #e7f0fd;
+        border-left: 4px solid #4a6fa5;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      button {
+        background-color: #4a6fa5;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: #263b5e;
+      }
+
+      #demo-example {
+        margin-top: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      #demo-result {
+        padding: 15px;
+      }
+
+      .code-tag {
+        color: #905;
+      }
+
+      .code-attr {
+        color: #07a;
+      }
+
+      .code-string {
+        color: #690;
+      }
+
+      .code-css-prop {
+        color: #905;
+      }
+
+      .code-css-val {
+        color: #07a;
+      }
+
+      .concept-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .concept-card {
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .concept-card h4 {
+        margin-top: 0;
+        color: #4a6fa5;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f1f3f5;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .resource-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .resource-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .resource-list li:last-child {
+        border-bottom: none;
+      }
+
+      .example-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      @media (max-width: 768px) {
+        .example-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: #4a6fa5;
+      }
+
+      .timeline-item {
+        margin-left: 20px;
+        padding-bottom: 30px;
+        position: relative;
+      }
+
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #4a6fa5;
+        border: 4px solid white;
+      }
+
+      .timeline-date {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .progress-section {
+        margin: 30px 0;
+      }
+
+      .progress-container {
+        background-color: #f1f3f5;
+        border-radius: 4px;
+        height: 30px;
+        margin: 15px 0;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #4a6fa5, #6989b9);
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        font-weight: bold;
+        transition: width 1s;
+      }
+
+      .color-box {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+        border: 1px solid #ddd;
+      }
+
+      .flex-example {
+        background-color: #f8f9fa;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
+      .flex-container {
+        display: flex;
+        background-color: #ddd;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .flex-item {
+        padding: 10px;
+        margin: 5px;
+        background-color: #4a6fa5;
+        color: white;
+        text-align: center;
+        flex: 1;
+      }
+
+      .grid-example {
+        background-color: #f8f9fa;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        background-color: #ddd;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .grid-item {
+        padding: 10px;
+        background-color: #4a6fa5;
+        color: white;
+        text-align: center;
+      }
+
+      .tooltip-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip-text {
+        cursor: help;
+        border-bottom: 1px dotted #333;
+      }
+
+      .tooltip-content {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 0;
+        width: 220px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+      }
+
+      .tooltip-container:hover .tooltip-content {
+        visibility: visible;
+      }
+
+      .animation-box {
+        width: 100px;
+        height: 100px;
+        background-color: #4a6fa5;
+        position: relative;
+        animation: move 3s infinite alternate;
+      }
+
+      @keyframes move {
+        0% {
+          left: 0;
+          background-color: #4a6fa5;
+        }
+        100% {
+          left: calc(100% - 100px);
+          background-color: #263b5e;
+        }
+      }
+
+      .accordion {
+        margin: 20px 0;
+      }
+
+      .accordion-item {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .accordion-header {
+        padding: 15px;
+        background-color: #f1f3f5;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .accordion-content {
+        padding: 15px;
+        display: none;
+      }
+
+      .accordion-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <h1>HTML & CSS Fundamentals</h1>
+        <p>The Complete Guide to Building Modern Websites</p>
+      </div>
+
+      <div class="content">
+        <div class="tabs">
+          <div class="tab active" onclick="switchTab('overview')">Overview</div>
+          <div class="tab" onclick="switchTab('html')">HTML</div>
+          <div class="tab" onclick="switchTab('css')">CSS</div>
+          <div class="tab" onclick="switchTab('layouts')">Layouts</div>
+          <div class="tab" onclick="switchTab('responsive')">Responsive</div>
+          <div class="tab" onclick="switchTab('advanced')">Advanced</div>
+          <div class="tab" onclick="switchTab('practice')">Practice</div>
+          <div class="tab" onclick="switchTab('resources')">Resources</div>
+        </div>
+
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+          <div class="section">
+            <h2>The Foundation of the Web</h2>
+            <p>
+              HTML and CSS are the two core technologies that power the World
+              Wide Web. Together, they form the building blocks of every website
+              you visit.
+            </p>
+
+            <div class="key-point">
+              <p>
+                🔑 <strong>Key Concept:</strong> HTML provides the structure and
+                content, while CSS controls the presentation and styling.
+              </p>
+            </div>
+
+            <div
+              class="definiton"
+              style="box-shadow: 0 2px 4px #000; padding: 20px"
+            >
+              <h1>HTML</h1>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                target="_blank"
+                style="text-decoration: none"
+                ><h3>Hypertext Markup Language</h3></a
+              >
+              <p style="font-weight: 500">
+                It defines the structure and content of a web page, including
+                text, images, links, and other elements. HTML uses a system of
+                tags to format and structure the content, which browsers then
+                interpret to display the web page
+              </p>
+
+              <p style="margin-bottom: 10%">
+                HTML (HyperText Markup Language) is the most basic building
+                block of the Web. It defines the meaning and structure of web
+                content. Other technologies besides HTML are generally used to
+                describe a web page's appearance/presentation (CSS) or
+                functionality/behavior (JavaScript). "Hypertext" refers to links
+                that connect web pages to one another, either within a single
+                website or between websites. Links are a fundamental aspect of
+                the Web. By uploading content to the Internet and linking it to
+                pages created by other people, you become an active participant
+                in the World Wide Web. HTML uses "markup" to annotate text,
+                images, and other content for display in a Web browser. HTML
+                markup includes special "elements".
+              </p>
+              <iframe
+                width="764"
+                height="300"
+                src="https://www.youtube.com/embed/MDLn5-zSQQI"
+                title="HTML Tutorial For Beginners |HTML In 10 Minutes | HTML Basics For Beginners | Simplilearn"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+
+              <a href="https://www.w3schools.com/html/default.asp"
+                ><button>Read Article</button></a
+              >
+            </div>
+
+            <div
+              class="definiton"
+              style="box-shadow: 0 2px 4px #000; padding: 20px; margin-top: 5%;"
+            >
+              <h1>Css</h1>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS"
+                target="_blank"
+                style="text-decoration: none"
+                ><h3>Cascading Style Sheet</h3></a
+              >
+              <p style="font-weight: 500;">
+                Cascading Style Sheets (CSS) is a stylesheet language used to
+                describe the presentation of a document written in HTML or XML
+                (including XML dialects such as SVG, MathML or XHTML). CSS
+                describes how elements should be rendered on screen, on paper,
+                in speech, or on other media.
+              </p>
+
+              <p style="margin-bottom: 10%">
+                Cascading Style Sheets (CSS) is a style sheet language used for
+                specifying the presentation and styling of a document written in
+                a markup language such as HTML or XML (including XML dialects
+                such as SVG, MathML or XHTML).CSS is a cornerstone technology of
+                the World Wide Web, alongside HTML and JavaScript. CSS is
+                designed to enable the separation of content and presentation,
+                including layout, colors, and fonts. This separation can improve
+                content accessibility, since the content can be written without
+                concern for its presentation; provide more flexibility and
+                control in the specification of presentation characteristics;
+                enable multiple web pages to share formatting by specifying the
+                relevant CSS in a separate .css file, which reduces complexity
+                and repetition in the structural content; and enable the .css
+                file to be cached to improve the page load speed between the
+                pages that share the file and its formatting. Separation of
+                formatting and content also makes it feasible to present the
+                same markup page in different styles for different rendering
+                methods, such as on-screen, in print, by voice (via speech-based
+                browser or screen reader), and on Braille-based tactile devices.
+                CSS also has rules for alternative formatting if the content is
+                accessed on a mobile device.
+              </p>
+
+              <div>
+              <iframe
+                width="764"
+                height="300"
+                src="https://www.youtube.com/embed/1PnVor36_40"
+                title="Learn CSS in 20 Minutes"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+              <a href="https://www.w3schools.com/css/css_intro.asp"
+                ><button>Read Article</button></a
+              >
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">1991</div>
+                <div class="timeline-content">
+                  <h4>HTML is Born</h4>
+                  <p>
+                    Tim Berners-Lee creates HTML as a means to share documents
+                    across the internet.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">1996</div>
+                <div class="timeline-content">
+                  <h4>CSS is Introduced</h4>
+                  <p>
+                    CSS 1 is released, allowing for separation of content and
+                    presentation.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2014</div>
+                <div class="timeline-content">
+                  <h4>HTML5 & CSS3</h4>
+                  <p>
+                    Modern standards bring new elements, responsive design
+                    capabilities, and advanced styling options.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Today</div>
+                <div class="timeline-content">
+                  <h4>Modern Web Development</h4>
+                  <p>
+                    HTML5 and CSS3 continue to evolve with new features and
+                    capabilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>How They Work Together</h2>
+            <div class="example-grid">
+              <div>
+                <h3>HTML Example</h3>
+                <div class="code-box">
+                  <p><span class="code-tag">&lt;!DOCTYPE html&gt;</span></p>
+                  <p><span class="code-tag">&lt;html&gt;</span></p>
+                  <p><span class="code-tag">&lt;head&gt;</span></p>
+                  <p>
+                    <span class="code-tag">&lt;title&gt;</span>My Web Page<span
+                      class="code-tag"
+                      >&lt;/title&gt;</span
+                    >
+                  </p>
+                  <p>
+                    <span class="code-tag">&lt;link</span>
+                    <span class="code-attr">rel</span>=<span class="code-string"
+                      >"stylesheet"</span
+                    >
+                    <span class="code-attr">href</span>=<span
+                      class="code-string"
+                      >"styles.css"</span
+                    ><span class="code-tag">&gt;</span>
+                  </p>
+                  <p><span class="code-tag">&lt;/head&gt;</span></p>
+                  <p><span class="code-tag">&lt;body&gt;</span></p>
+                  <p>
+                    <span class="code-tag">&lt;header</span>
+                    <span class="code-attr">class</span>=<span
+                      class="code-string"
+                      >"page-header"</span
+                    ><span class="code-tag">&gt;</span>
+                  </p>
+                  <p>
+                    <span class="code-tag">&lt;h1</span>
+                    <span class="code-attr">id</span>=<span class="code-string"
+                      >"main-title"</span
+                    ><span class="code-tag">&gt;</span>Welcome to My Site<span
+                      class="code-tag"
+                      >&lt;/h1&gt;</span
+                    >
+                  </p>
+                  <p><span class="code-tag">&lt;/header&gt;</span></p>
+                  <p><span class="code-tag">&lt;nav&gt;</span></p>
+                  <p><span class="code-tag">&lt;ul&gt;</span></p>
+                  <p>
+                    <span class="code-tag">&lt;li&gt;&lt;a</span>
+                    <span class="code-attr">href</span>=<span
+                      class="code-string"
+                      >"#"</span
+                    ><span class="code-tag">&gt;</span>Home<span
+                      class="code-tag"
+                      >&lt;/a&gt;&lt;/li&gt;</span
+                    >
+                  </p>
+                  <p>
+                    <span class="code-tag">&lt;li&gt;&lt;a</span>
+                    <span class="code-attr">href</span>=<span
+                      class="code-string"
+                      >"#"</span
+                    ><span class="code-tag">&gt;</span>About<span
+                      class="code-tag"
+                      >&lt;/a&gt;&lt;/li&gt;</span
+                    >
+                  </p>
+                  <p>
+                    <span class="code-tag">&lt;li&gt;&lt;a</span>
+                    <span class="code-attr">href</span>=<span
+                      class="code-string"
+                      >""</span
+                    ><span class="code-tag">&gt;</span
+                    ><a href="page.html">Contact</a
+                    ><span class="code-tag">&lt;/a&gt;&lt;/li&gt;</span>
+                  </p>
+                  <p><span class="code-tag">&lt;/ul&gt;</span></p>
+                  <p><span class="code-tag">&lt;/nav&gt;</span></p>
+                  <p><span class="code-tag">&lt;main&gt;</span></p>
+                  <p>
+                    <span class="code-tag">&lt;p&gt;</span>This is the main
+                    content area.<span class="code-tag">&lt;/p&gt;</span>
+                  </p>
+                  <p><span class="code-tag">&lt;/main&gt;</span></p>
+                  <p><span class="code-tag">&lt;/body&gt;</span></p>
+                  <p><span class="code-tag">&lt;/html&gt;</span></p>
+                </div>
+              </div>
+              <div>
+                <h3>CSS Example</h3>
+                <div class="code-box">
+                  <p><span class="code-comment">/* Global Styles */</span></p>
+                  <p><span class="code-tag">body</span> {</p>
+                  <p>
+                    <span class="code-css-prop">font-family</span>:
+                    <span class="code-css-val">'Arial', sans-serif</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">line-height</span>:
+                    <span class="code-css-val">1.6</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">margin</span>:
+                    <span class="code-css-val">0</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">padding</span>:
+                    <span class="code-css-val">0</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">color</span>:
+                    <span class="code-css-val">#333</span>;
+                  </p>
+                  <p>}</p>
+                  <p></p>
+                  <p><span class="code-comment">/* Header Styles */</span></p>
+                  <p><span class="code-tag">.page-header</span> {</p>
+                  <p>
+                    <span class="code-css-prop">background-color</span>:
+                    <span class="code-css-val">#4a6fa5</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">color</span>:
+                    <span class="code-css-val">white</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">padding</span>:
+                    <span class="code-css-val">2rem</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">text-align</span>:
+                    <span class="code-css-val">center</span>;
+                  </p>
+                  <p>}</p>
+                  <p></p>
+                  <p><span class="code-tag">#main-title</span> {</p>
+                  <p>
+                    <span class="code-css-prop">margin</span>:
+                    <span class="code-css-val">0</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">font-size</span>:
+                    <span class="code-css-val">2.5rem</span>;
+                  </p>
+                  <p>}</p>
+                  <p></p>
+                  <p>
+                    <span class="code-comment">/* Navigation Styles */</span>
+                  </p>
+                  <p><span class="code-tag">nav</span> {</p>
+                  <p>
+                    <span class="code-css-prop">background-color</span>:
+                    <span class="code-css-val">#263b5e</span>;
+                  </p>
+                  <p>}</p>
+                  <p></p>
+                  <p><span class="code-tag">nav ul</span> {</p>
+                  <p>
+                    <span class="code-css-prop">display</span>:
+                    <span class="code-css-val">flex</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">list-style</span>:
+                    <span class="code-css-val">none</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">margin</span>:
+                    <span class="code-css-val">0</span>;
+                  </p>
+                  <p>
+                    <span class="code-css-prop">padding</span>:
+                    <span class="code-css-val">0</span>;
+                  </p>
+                  <p>}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="example-container">
+              <div class="example-header">Result:</div>
+              <div class="example-content">
+                <div
+                  style="
+                    background-color: #4a6fa5;
+                    color: white;
+                    padding: 2rem;
+                    text-align: center;
+                  "
+                >
+                  <h1 style="margin: 0; font-size: 2.5rem">
+                    Welcome to My Site
+                  </h1>
+                </div>
+                <div style="background-color: #263b5e; padding: 10px">
+                  <ul
+                    style="
+                      display: flex;
+                      list-style: none;
+                      margin: 0;
+                      padding: 0;
+                      justify-content: center;
+                    "
+                  >
+                    <li style="margin: 0 15px">
+                      <a style="color: white; text-decoration: none" href="#"
+                        >Home</a
+                      >
+                    </li>
+                    <li style="margin: 0 15px">
+                      <a style="color: white; text-decoration: none" href="#"
+                        >About</a
+                      >
+                    </li>
+                    <li style="margin: 0 15px">
+                      <a style="color: white; text-decoration: none" href="#"
+                        >Contact</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div style="padding: 20px">
+                  <p>This is the main content area.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Learning Path</h2>
+            <div class="progress-section">
+              <h3>HTML Proficiency Levels</h3>
+              <p>Beginner</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 25%">Basic Tags</div>
+              </div>
+              <p>Intermediate</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 50%">
+                  Forms & Tables
+                </div>
+              </div>
+              <p>Advanced</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 75%">Semantic HTML</div>
+              </div>
+              <p>Expert</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 100%">
+                  Accessibility & SEO
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-section">
+              <h3>CSS Proficiency Levels</h3>
+              <p>Beginner</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 25%">Basic Styling</div>
+              </div>
+              <p>Intermediate</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 50%">
+                  Layout & Positioning
+                </div>
+              </div>
+              <p>Advanced</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 75%">
+                  Animations & Transforms
+                </div>
+              </div>
+              <p>Expert</p>
+              <div class="progress-container">
+                <div class="progress-bar" style="width: 100%">
+                  Responsive Design & CSS Architecture
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HTML TAB -->
+        <div id="html" class="tab-content">
+          <div class="section">
+            <h2>HTML: The Structure of the Web</h2>
+            <p>
+              HTML (HyperText Markup Language) is the standard markup language
+              for documents designed to be displayed in a web browser. It
+              defines the meaning and structure of web content.
+            </p>
+
+            <div class="key-point">
+              <p>
+                🔑 <strong>Key Concept:</strong> HTML uses elements to define
+                the structure of a page. Elements are represented by tags, which
+                are enclosed in angle brackets &lt; &gt;.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>HTML Document Structure</h2>
+            <div class="code-box">
+              <p>
+                <span class="code-tag">&lt;!DOCTYPE html&gt;</span>
+                <span class="code-comment"
+                  ><!-- Defines this document as HTML5 --></span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;html&gt;</span>
+                <span class="code-comment"
+                  ><!-- Root element of an HTML page --></span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;head&gt;</span>
+                <span class="code-comment"
+                  ><!-- Contains meta-information about the document --></span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;meta</span>
+                <span class="code-attr">charset</span>=<span class="code-string"
+                  >"UTF-8"</span
+                ><span class="code-tag">&gt;</span>
+              </p>
+              <p>
+                <span class="code-tag">&lt;meta</span>
+                <span class="code-attr">name</span>=<span class="code-string"
+                  >"viewport"</span
+                >
+                <span class="code-attr">content</span>=<span class="code-string"
+                  >"width=device-width, initial-scale=1.0"</span
+                ><span class="code-tag">&gt;</span>
+              </p>
+              <p>
+                <span class="code-tag">&lt;title&gt;</span>Page Title<span
+                  class="code-tag"
+                  >&lt;/title&gt;</span
+                >
+                <span class="code-comment"
+                  ><!-- Title appears in browser tab --></span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;link</span>
+                <span class="code-attr">rel</span>=<span class="code-string"
+                  >"stylesheet"</span
+                >
+                <span class="code-attr">href</span>=<span class="code-string"
+                  >"styles.css"</span
+                ><span class="code-tag">&gt;</span>
+                <span class="code-comment"><!-- Link to CSS file --></span>
+              </p>
+              <p><span class="code-tag">&lt;/head&gt;</span></p>
+              <p>
+                <span class="code-tag">&lt;body&gt;</span>
+                <span class="code-comment"
+                  ><!-- Contains the visible content of the page --></span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;header&gt;</span>This is the
+                header<span class="code-tag">&lt;/header&gt;</span>
+              </p>
+              <p>
+                <span class="code-tag">&lt;main&gt;</span>Main content<span
+                  class="code-tag"
+                  >&lt;/main&gt;</span
+                >
+              </p>
+              <p>
+                <span class="code-tag">&lt;footer&gt;</span>This is the
+                footer<span class="code-tag">&lt;/footer&gt;</span>
+              </p>
+              <p><span class="code-tag">&lt;/body&gt;</span></p>
+              <p><span class="code-tag">&lt;/html&gt;</span></p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Essential HTML Elements</h2>
+
+            <h3>Text Elements</h3>
+            <table>
+              <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+              </tr>
+              <tr>
+                <td>&lt;h1&gt; to &lt;h6&gt;</td>
+                <td>Headings (h1 is most important, h6 is least)</td>
+                <td><h1 style="margin: 0; font-size: 24px">Heading 1</h1></td>
+              </tr>
+              <tr>
+                <td>&lt;p&gt;</td>
+                <td>Paragraph</td>
+                <td><p style="margin: 0">This is a paragraph.</p></td>
+              </tr>
+              <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Strong importance (usually bold)</td>
+                <td><strong>Important text</strong></td>
+              </tr>
+              <tr>
+                <td>&lt;em&gt;</td>
+                <td>Emphasized text (usually italic)</td>
+                <td><em>Emphasized text</em></td>
+              </tr>
+              <tr>
+                <td>&lt;span&gt;</td>
+                <td>Inline container for text</td>
+                <td>Text with <span style="color: blue">blue span</span></td>
+              </tr>
+            </table>
+
+            <h3>Lists</h3>
+            <div class="code-container">
+              <div class="code-box">
+                <p>
+                  <span class="code-tag">&lt;ul&gt;</span>
+                  <span class="code-comment"><!-- Unordered list --></span>
+                </p>
+                <p>
+                  <span class="code-tag">&lt;li&gt;</span>Item 1<span
+                    class="code-tag"
+                    >&lt;/li&gt;</span
+                  >
+                </p>
+                <p>
+                  <span class="code-tag">&lt;li&gt;</span>Item 2<span
+                    class="code-tag"
+                    >&lt;/li&gt;</span
+                  >
+                </p>
+                <p>
+                  <span class="code-tag">&lt;li&gt;</span>Item 3<span
+                    class="code-tag"
+                    >&lt;/li&gt;</span
+                  >
+                </p>
+                <p><span class="code-tag">&lt;/ul&gt;</span></p>
+              </div>
+              <div>
+                <ul>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="page.html"
+      ><h1
+        style="
+          justify-content: center;
+          text-align: center;
+          margin: 80px;
+          margin-bottom: 10%;
+        "
+      >
+        <button style="width: 40%; font-size: 25px; border-radius: 10px">
+          Next
+        </button>
+      </h1></a
+    >
+  </body>
+</html>
